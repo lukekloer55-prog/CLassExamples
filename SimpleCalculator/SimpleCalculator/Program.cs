@@ -4,8 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Choose A Number:"); int Firstnumber = Console.Read();
-            Console.WriteLine("Choose Another Number:"); int Secondnumber = Console.Read();
+            Console.Write(" Choose A Number:");
+            int Firstnumber = Console.Read();
+            Console.Write(" Choose Another Number:"); 
+            int Secondnumber = Console.Read();
             Console.WriteLine("Choose one of the following operations:");
             Console.WriteLine("1. Sum");
             Console.WriteLine("2. Product");
