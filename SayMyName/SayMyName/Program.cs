@@ -1,8 +1,10 @@
 ﻿/*Luke Kloer
 Rcet 2265
-Semester 3
-RCET
-https://github.com/lukekloer55-prog/HelloWorld.git*/
+Semester Spring 2026
+RCET 2265 - Programming in C#
+SayMyName Program
+GitHub URL:
+https://github.com/lukekloer55-prog/CLassExamples/tree/main/SayMyName*/
 
 using System.Diagnostics;
 
