@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Dynamic;
 using System.Net.Security;
 
 namespace SimpleCalculator
@@ -74,8 +75,10 @@ namespace SimpleCalculator
 
             //Console.Read();
 
+            do
+            {
 
-            List<string> options = new List<string>();
+                List<string> options = new List<string>();
             options.Add("Start");
             options.Add("Exit");
             options.Add("Beep Song");
@@ -86,29 +89,13 @@ namespace SimpleCalculator
             int indexOption = (0);
 
             string optionSelected = (options[indexOption]);
-
-            
-
-            do
-            {
+         
 
                 bool cursorUp = Console.ReadKey().Key == ConsoleKey.UpArrow;
 
                 bool cursorDown = Console.ReadKey().Key == ConsoleKey.DownArrow;
 
-                if (cursorUp == true)
-                {   
-                    indexOption++;
-
-                    if (indexOption > 2)
-                    {
-                        indexOption = 0;
-                    }
-                    //Does not allow the number to go over 2 as it is not a value held by the list. Rolls over to 0
-                }
-                //increase indexOption up with up arrow
-                if (cursorDown == true)
-                    
+                if (Console.ReadKey().Key == ConsoleKey.UpArrow)
                 {
                     indexOption--;
 
@@ -116,57 +103,124 @@ namespace SimpleCalculator
                     {
                         indexOption = 2;
                     }
+
+                    //Does not allow the number to go over 2 as it is not a value held by the list. Rolls over to 0
+                }
+                //increase indexOption up with up arrow
+                if (Console.ReadKey().Key == ConsoleKey.DownArrow)
+
+                {
+                    indexOption++;
+
+                    if (indexOption > 2)
+                    {
+                        indexOption = 0;
+                    }
                     //Does not allow the number to go under 0 causing an error. Rolls over to 2
                 }
                 //decrease indexOption down with down arrow
 
-
-                Console.WriteLine(indexOption);
-
-                Console.Clear();
+               
 
                 string selectedOption = ((options[indexOption]));
 
-                if (options)
-                Console.WriteLine((options[0]));
-                Console.WriteLine((options[1]));
-                Console.WriteLine((options[2]));
+                string option1 = ((options[0]));
+                string option2 = ((options[1]));
+                string option3 = ((options[2]));
 
-                Console.WriteLine(selectedOption);
+
+                Console.Clear();
+
+
+               
+                for (int i = 0; i < 3; i++)
+                {
+
+                    if (selectedOption == options[i])
+                    {
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine(">" + (options[i]) + "<");
+                        Console.ResetColor();
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("" + (options[i]) + "");
+                    }
+
+                }
+
+                
+
+
+
+
+
+
+                /* {
+                    if (option1 == selectedOption)
+                    {
+                        string selectedstart = ("<" + selectedOption + ">");
+                        
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine(selectedstart);
+                        
+                    }
+                    else
+                    {
+                        string selectedstart = (" " + selectedOption + " ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine(selectedstart);
+                    }
+
+
+                    if (option2 == selectedOption)
+                    {
+                        string selectedstop = ("<" + selectedOption + ">");
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine(selectedstop);
+                    }
+                    else
+                    {
+                        string selectedstop = (" " + selectedOption + " ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine(selectedstop);
+                    }
+
+
+                    if (option3 == selectedOption)
+                    {
+                        string selectedbeepsong = ("<" + selectedOption + ">");
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.WriteLine(selectedbeepsong);
+                    }
+                    else
+                    {
+                        string selectedbeepsong = (" " + selectedOption + " ");
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.BackgroundColor = ConsoleColor.Black;
+                        Console.WriteLine(selectedbeepsong);
+                    }
+                    Console.WriteLine(selectedstart);
+                    Console.WriteLine(selectedstop);
+                        Console.WriteLine(selectedbeepsong); 
+                } */
 
 
 
 
             }
-            while (Console.ReadKey().Key != ConsoleKey.Enter);
+           
+            while (Console.ReadKey().Key != ConsoleKey.Escape);
 
 
-            /*  Console.WriteLine("Choose the menu option");
-                 
-                string input = Console.ReadLine();
-
-                 if (int.TryParse(input, out int indexOption))
-                
-                //Converts typed input into a int value
-
-                 {
-
-                     {
-                           if
-                           (indexOption <= 3)
-                           {
-                               Console.WriteLine("The Menu Option Selected is: " + (options[indexOption]));
-                           }
-
-                           //if indexoption is less than list total count then write the menu selection
-
-                           else
-
-                           {
-                               Console.WriteLine("The Index option is out of range!!");
-                               Console.ReadLine();
-                           }
-                      */
+           
 
        }
     }
