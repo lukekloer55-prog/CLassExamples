@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*Luke Kloer
+Rcet 2265
+Semester 3
+RCET
+https://github.com/lukekloer55-prog/HelloWorld.git*/
+
+using System;
 using System.ComponentModel.Design;
 using System.Dynamic;
 using System.Net.Security;
