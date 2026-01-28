@@ -2,7 +2,7 @@
 Rcet 2265
 Semester 3
 RCET
-https://github.com/lukekloer55-prog/HelloWorld.git*/
+https://github.com/lukekloer55-prog/ClassExamples/tree/main/SimpleCalculator */
 
 using System;
 using System.ComponentModel.Design;
